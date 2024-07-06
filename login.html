@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="">
+            <div class="">
+                <div class="">
+                  <header class="">
+                    <h1 class="">Login to Your Account</h1>
+                  </header>
+    
+                  <!-- Form -->
+                  <form class="login" name="login" action="login.php" onsubmit="return check()" method="post">
+                    <div class="">
+                      <div class="">
+                        <input class="" name="email" type="email" placeholder="Email Adress">
+                      </div>
+                    </div>
+    
+                    <div class="">
+                      <div class="">
+                        <input class="" type="password" placeholder="Password">
+                      </div>
+                    </div>
+
+                    <div class="">
+                      <button class="" type="submit">Login</button>
+                    </div>
+                  </form>
+                </div> 
+            </div>  
+        </div>
+
+        <script>
+            function check(){
+                var x=document.forms["login"]["email"].value;
+                if (x==null ||x==""){
+                alert("Email cannot be NULL!");
+                return false;
+                    }
+                }
+        </script>
+    </body>
+</html>
