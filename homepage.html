@@ -21,18 +21,55 @@
             color: white;
         }
 
+        /*Navigation bar*/
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #6f42c1 !important;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-logo {
+            height: 40px;
+            margin-right: 10px;
+        }
+
     </style>
-    </head>
+</head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="image/IKUN logo.png" alt="IKUN Logo" class="navbar-logo">
+                IKUN
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login2.0.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signUp2.0.html">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="userProfile.html">User Profile</a></li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="settings.html">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Include the navigation header using an iframe -->
-    <iframe src="navigationIKUN.html" frameborder="0" width="100%" height="100"></iframe>
+<!--    <iframe src="navigationIKUN.html" frameborder="0" width="100%" height="100"></iframe>  -->
 
     <!-- Your page content goes here -->
     <div class="container mt-4">
         <h1 class="mb-4">Welcome to Home Page</h1>
         <h4>Choose the service you need.</h4>
     </div>
-
 
 
     <div class="container">
