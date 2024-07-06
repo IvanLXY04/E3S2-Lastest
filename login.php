@@ -22,7 +22,7 @@ if(isset($_POST['email'])){
     }
 }
 if($found==TRUE)
-    header('Location:mainPage.html');
+    header('Location:navigationIKUN.html');
 else{
     echo"<script>alert('Wrong Email or Password');
          window.location='login.html'</script>";
