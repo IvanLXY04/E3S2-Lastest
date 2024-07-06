@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Navigation Bar Styles */
+        /*background*/
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+        }
+
         .topnav {
             background-color: #333;
             overflow: hidden;
@@ -30,117 +37,196 @@
             color: white;
         }
 
-        /* Sign Up Form Styles */
-        body {
-            font-family: Arial, sans-serif;
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 50px); /* Adjust height to account for the navigation bar */
+            padding: 20px;
         }
 
-        .container {
-            padding: 16px;
+        .login-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
 
-        input[type=text], input[type=password], input[type=email] {
+        .login-box h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .input-group input {
             width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
+            padding: 10px;
             border: 1px solid #ccc;
-            box-sizing: border-box;
+            border-radius: 5px;
+            font-size: 16px;
         }
 
-        button {
-            background-color: #04AA6D;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
+        .input-group button {
             width: 100%;
+            padding: 10px;
+            background: #6a11cb;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
 
-        button:hover {
-            opacity: 0.8;
+        .input-group button:hover {
+            background: #2575fc;
         }
 
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
+        .options {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 14px;
+            color: #333;
         }
 
-        .imgcontainer {
-            text-align: center;
-            margin: 24px 0 12px 0;
+        .options a {
+            color: #6a11cb;
+            text-decoration: none;
+            margin-top: 10px;
         }
 
-        img.avatar {
-            width: 40%;
-            border-radius: 50%;
+        .options a:hover {
+            text-decoration: underline;
         }
 
-        .container {
-            padding: 16px;
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #6f42c1 !important;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-logo {
+            height: 40px;
+            margin-right: 10px;
         }
 
-        span.psw {
-            float: right;
-            padding-top: 16px;
-        }
-
-        /* Change styles for span and cancel button on extra small screens */
-        @media screen and (max-width: 300px) {
-            span.psw {
-                display: block;
-                float: none;
-            }
-            .cancelbtn {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <div class="topnav">
-        <a href="#home">Home</a>
-        <a href="#login">Login</a>
-        <a class="active" href="#signup">Sign Up</a>
-        <a href="#profile">User Profile</a>
-        <a href="#settings">Settings</a>
-        <a href="#logout">Logout</a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="image/IKUN logo.png" alt="IKUN Logo" class="navbar-logo">
+                IKUN
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login2.0.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signUp2.0.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Sign Up Form -->
-    <h2>Sign Up</h2>
-    <form action="/action_page.php" method="post">
-        <div class="imgcontainer">
-            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    <div class="login-container">
+        <div class="login-box">
+                <h2>Create New Account</h2>
+            <!-- Form -->
+            <div class="">    
+            <form class="signUp" name="signUp" action="signUp.php" onsubmit="return checkPass()" method="post">
+                <div class="">
+                <div class="">
+                    <input class="" type="text" name="firstName" placeholder="First name">
+                </div>
+            
+                <div class="">
+                    <input class="" type="text" name="lastName" placeholder="Last name">
+                    </div>
+                </div>
+
+                <div class="">
+                <select class="" name="gender" style="width: 100%;">
+                    <option value="" disabled selected hidden>Gender</option>
+                    <option value="Option 1">Male</option>
+                    <option value="Option 2">Female</option>
+                </select>
+                </div>
+            
+                <div class="">
+                <input name="dob" type="date" placeholder="Date of Birth">
+                </div>
+
+                <div class="">
+                <input class="" type="text" name="email" placeholder="Email address">
+                <p class="notice">Important: it will become your User ID</p>
+                </div>
+            
+                <div class="">
+                <input class="" type="password" name="password" placeholder="Password">
+                </div>
+            
+                <div class="">
+                <input class="" type="password" name="confirmPass" placeholder="Confirm password">
+                </div>
+                
+                <div class="">
+                <input class="" type="text" name="phone" placeholder="Phone No.">
+            </div>
+
+            <div>
+                <div>
+                <input class="" type="text" name="postcode" placeholder="PostCode">
+                </div>
+
+                <div>
+                <input class="" type="text" name="city" placeholder="City">
+                </div>
+            </div>
+                
+            <div class="">
+                <input class="" type="text" name="highestEducation" placeholder="Educational Background">
+            </div>
+            
+            <div>
+                <input type="file" name="profilPic" accept="image/png, image/jpeg">
+            </div>
+                <div class="input-group">
+                <button class="" type="submit">Sign Up</button>
+                </form>
+            </div>
+
+            <script>
+            function checkPass(){
+                var x=document.forms["signUp"]["confirmPass"].value;
+                var y=document.forms["signUp"]["password"].value;
+                if (x!=y ||x==""){
+                alert("the confirm password must be same as password!");
+                return false;
+                    }
+                }
+        </script>
         </div>
-
-        <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-
-            <label for="email"><b>Email</b></label>
-            <input type="email" placeholder="Enter Email" name="email" required>
-
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-            <button type="submit">Sign Up</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-        </div>
-
-        <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-        </div>
-    </form>
-
+    </div>
 </body>
 </html>
