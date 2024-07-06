@@ -6,7 +6,7 @@ if(isset($_POST['email'])){
     $userId=$_POST['email'];
     $password=$_POST['password'];
     
-    $sql="select * from user";
+    $sql = "SELECT * FROM user";
     $result=mysqli_query($session,$sql);
     $found=FALSE;
     while($user=mysqli_fetch_array($result)){
@@ -22,7 +22,7 @@ if(isset($_POST['email'])){
     }
 }
 if($found==TRUE)
-    header('Location:mainPage.html');
+    header('Location:navigationIKUN.html');
 else{
     echo"<script>alert('Wrong Email or Password');
          window.location='login.html'</script>";
