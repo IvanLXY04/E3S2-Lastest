@@ -10,16 +10,9 @@ if(isset($_POST['email'])){
     $phone=$_POST["phone"];
     $postcode=$_POST["postcode"];
     $city=$_POST["city"];
-    $highestEducation=$_POST["highestEducation"];
-    $profilePic=$_FILES["profilePic"]["name"];
-	
-    if (isset($_POST['profilePic'])) {
-        // Access the 'profilePic' key from the array
-        $profilePic = $_POST['profilePic'];
-    } 
 
-    $sql = "INSERT INTO user (userId, password, firstName, lastName, gender, dob, city, postcode, highestEducation, phoneNum,profilePic) 
-            VALUES ('$email', '$password', '$firstName', '$lastName', '$gender', '$dob', '$city', '$postcode', '$highestEducation', '$phone','$profilePic')";
+    $sql = "INSERT INTO user (userId, password, firstName, lastName, gender, dob, city, postcode, phoneNum) 
+            VALUES ('$email', '$password', '$firstName', '$lastName', '$gender', '$dob', '$city', '$postcode', '$phone')";
     $result=mysqli_query($session,$sql);
     if($result)
         echo"<script>alert('Succesfully SignUp')</script>";

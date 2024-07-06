@@ -140,6 +140,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="login2.0.html">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="signUp2.0.html">Sign Up</a></li>
                 </ul>
@@ -150,10 +151,10 @@
     <!-- Sign Up Form -->
     <div class="login-container">
         <div class="login-box">
-                <h2>Create New Account</h2>
+                <h2>Update Information</h2>
             <!-- Form -->
             <div class="">    
-            <form class="signUp" name="signUp" action="signUp.php" onsubmit="return checkPass()" method="post">
+            <form class="signUp" name="signUp" action="userUpdate.php" method="post">
                 <div class="">
                 <div class="">
                     <input class="" type="text" name="firstName" placeholder="First name">
@@ -202,12 +203,12 @@
                 <input class="" type="text" name="city" placeholder="City">
                 </div>
             </div>
+            
                 <div class="input-group">
-                <button class="" type="submit" href="homepage.html">Sign Up</button>
+                <button class="" type="submit">Sign Up</button>
                 </form>
             </div>
-            
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
             <script>
             function checkPass(){
                 var x=document.forms["signUp"]["confirmPass"].value;
